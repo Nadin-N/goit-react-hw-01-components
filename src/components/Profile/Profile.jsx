@@ -1,4 +1,14 @@
 import PropTypes from 'prop-types';
+import {
+  ProfileBox,
+  ProfileDescription,
+  Portrait,
+  AboutInfoBox,
+  Name,
+  Stats,
+  StatsItem,
+  StatsQuantity,
+} from './Profile.styled';
 
 export function Profile({
   avatar,
@@ -8,29 +18,30 @@ export function Profile({
   stats: { followers, views, likes },
 }) {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt={username} className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
-      </div>
-
-      <ul className="stats">
-        <li>
+    <ProfileBox className="profile">
+      <ProfileDescription className="description">
+        <Portrait src={avatar} alt={username} className="avatar" />
+        <AboutInfoBox>
+          <Name className="name">{username}</Name>
+          <p className="tag">@{tag}</p>
+          <p className="location">{location}</p>
+        </AboutInfoBox>
+      </ProfileDescription>
+      <Stats className="stats">
+        <StatsItem>
           <span className="label">Followers</span>
-          <span className="quantity">{followers}</span>
-        </li>
-        <li>
+          <StatsQuantity className="quantity">{followers}</StatsQuantity>
+        </StatsItem>
+        <StatsItem>
           <span className="label">Views</span>
-          <span className="quantity">{views}</span>
-        </li>
-        <li>
+          <StatsQuantity className="quantity">{views}</StatsQuantity>
+        </StatsItem>
+        <StatsItem>
           <span className="label">Likes</span>
-          <span className="quantity">{likes}</span>
-        </li>
-      </ul>
-    </div>
+          <StatsQuantity className="quantity">{likes}</StatsQuantity>
+        </StatsItem>
+      </Stats>
+    </ProfileBox>
   );
 }
 
