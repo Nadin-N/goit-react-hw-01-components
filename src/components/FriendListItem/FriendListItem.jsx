@@ -10,9 +10,8 @@ export function FriendListItem({ avatar, name, isOnline }) {
   function statusUserColor() {
     if (isOnline) {
       return 'green';
-    } else {
-      return 'red';
     }
+    return 'red';
   }
 
   return (
