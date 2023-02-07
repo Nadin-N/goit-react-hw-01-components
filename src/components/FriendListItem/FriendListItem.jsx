@@ -7,19 +7,20 @@ import {
 } from './FriendListItem.styled';
 
 export function FriendListItem({ avatar, name, isOnline }) {
+  function statusUserColor() {
+    if (isOnline) {
+      return 'green';
+    } else {
+      return 'red';
+    }
+  }
+
   return (
     <FriendItem className="item">
-      {isOnline ? (
-        <FriendStatus
-          className="status"
-          style={{ backgroundColor: 'green' }}
-        ></FriendStatus>
-      ) : (
-        <FriendStatus
-          className="status"
-          style={{ backgroundColor: 'red' }}
-        ></FriendStatus>
-      )}
+      <FriendStatus
+        className="status"
+        style={{ backgroundColor: statusUserColor() }}
+      ></FriendStatus>
       <FriendAvatar className="avatar" src={avatar} alt={name} width="80" />
       <FriendName className="name">{name}</FriendName>
     </FriendItem>
