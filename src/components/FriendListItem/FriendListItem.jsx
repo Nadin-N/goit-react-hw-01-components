@@ -19,7 +19,7 @@ export function FriendListItem({ avatar, name, isOnline }) {
       <FriendStatus
         className="status"
         style={{ backgroundColor: statusUserColor() }}
-      ></FriendStatus>
+      />
       <FriendAvatar className="avatar" src={avatar} alt={name} width="80" />
       <FriendName className="name">{name}</FriendName>
     </FriendItem>

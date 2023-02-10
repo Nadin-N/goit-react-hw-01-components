@@ -52,7 +52,7 @@ export const StatListItem = styled.li`
     border-bottom-right-radius: ${({ theme }) => theme.radii.normal};
   }
 `;
-export const Percentage = styled.li`
+export const Percentage = styled.span`
   font-size: ${({ theme }) => theme.fontSizes.l};
   @media (min-width: ${({ theme }) => theme.space.mobile}) {
     font-size: ${({ theme }) => theme.fontSizes.xl};
